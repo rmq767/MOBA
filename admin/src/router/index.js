@@ -17,8 +17,7 @@ import AdminUserList from "../views/AdminUserList.vue";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
+const routes = [{
     path: "/login",
     name: "login",
     component: Login,
@@ -28,8 +27,7 @@ const routes = [
     path: "/",
     name: "main",
     component: Main,
-    children: [
-      {
+    children: [{
         path: "/categories/create",
         component: Category
       },

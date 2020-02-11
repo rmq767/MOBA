@@ -23,7 +23,7 @@ module.exports = app => {
         }
         let result = await req.Model.find()
             .setOptions(queryOptions)
-            .limit(15); //populate('parent')关联查询
+            .limit(100); //populate('parent')关联查询
         res.send(result);
     });
 

@@ -7,6 +7,7 @@ app.use(require('cors')())
 app.use(express.json())
 app.use('/uploads', express.static(__dirname + '/uploads')) //静态文件 
 app.use('/admin', express.static(__dirname + '/admin')) //静态文件 
+app.use('/', express.static(__dirname + '/web')) //静态文件 
 
 require('./routes/admin')(app)
 require('./plugins/db')(app)

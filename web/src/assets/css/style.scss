@@ -26,7 +26,8 @@ p {
   line-height: 1.5em;
 }
 
-@each $colorKey, $colorVal in $colors {
+@each $colorKey,
+$colorVal in $colors {
   .text-#{$colorKey} {
     color: $colorVal;
   }
@@ -43,7 +44,8 @@ p {
   }
 }
 
-@each $sizeKey, $sizeVal in $font-sizes {
+@each $sizeKey,
+$sizeVal in $font-sizes {
   .fs-#{$sizeKey} {
     font-size: $sizeVal * $base-font-size;
   }
@@ -74,28 +76,34 @@ p {
   flex: 1;
 }
 
-@each $flexKey, $flexVal in $flex-jc {
+@each $flexKey,
+$flexVal in $flex-jc {
   .jc-#{$flexKey} {
     justify-content: $flexVal;
   }
 }
 
-@each $flexKey, $flexVal in $flex-ai {
+@each $flexKey,
+$flexVal in $flex-ai {
   .ai-#{$flexKey} {
     align-items: $flexVal;
   }
 }
 
-@each $typeKey, $typeVal in $space-types {
+@each $typeKey,
+$typeVal in $space-types {
+
   // .m-0{margin:0}
-  @each $sizeKey, $sizeVal in $space-size {
+  @each $sizeKey,
+  $sizeVal in $space-size {
     .#{$typeKey}-#{$sizeKey} {
       #{$typeVal}: $sizeVal * $space-base-size;
     }
   }
 
   // .mx-1{}水平
-  @each $sizeKey, $sizeVal in $space-size {
+  @each $sizeKey,
+  $sizeVal in $space-size {
     .#{$typeKey}x-#{$sizeKey} {
       #{$typeVal}-left: $sizeVal * $space-base-size;
       #{$typeVal}-right: $sizeVal * $space-base-size;
@@ -103,15 +111,20 @@ p {
   }
 
   // .my-1{}垂直
-  @each $sizeKey, $sizeVal in $space-size {
+  @each $sizeKey,
+  $sizeVal in $space-size {
     .#{$typeKey}y-#{$sizeKey} {
       #{$typeVal}-top: $sizeVal * $space-base-size;
       #{$typeVal}-bottom: $sizeVal * $space-base-size;
     }
   }
 
-  @each $directionKey, $directionVal in $space-direction {
-    @each $sizeKey, $sizeVal in $space-size {
+  @each $directionKey,
+  $directionVal in $space-direction {
+
+    @each $sizeKey,
+    $sizeVal in $space-size {
+
       // .mt-1{margin-top:0.25rem}
       .#{$typeKey}#{$directionKey}-#{$sizeKey} {
         #{$typeVal}-#{$directionVal}: $sizeVal * $space-base-size;
@@ -126,6 +139,24 @@ p {
   border-radius: 0.1538rem;
   font-size: map-get($font-sizes, "sm") * $base-font-size; //map-get()找之前定义的数据
   padding: 0.2rem 0.6rem;
+
+  &.btn-lg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      color: map-get($map: $colors, $key: 'primary');
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+    }
+
+    background: map-get($map: $colors, $key: white-1);
+    border: 1px solid map-get($map: $colors, $key: white-2);
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
 }
 
 // nav

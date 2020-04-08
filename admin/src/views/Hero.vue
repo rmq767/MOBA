@@ -35,7 +35,7 @@
               <i v-else class="el-icon-plus avatar-uploader-icon"></i>
             </el-upload>
           </el-form-item>
-
+    
           <el-form-item label="类型">
             <el-select v-model="model.categories" multiple>
               <el-option
@@ -218,7 +218,6 @@ export default {
       heroes: []
     };
   },
-
   methods: {
     // afterUpload(res) {
     //   this.model.avatar = res.url;
